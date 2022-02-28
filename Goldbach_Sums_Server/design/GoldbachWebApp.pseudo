@@ -1,0 +1,24 @@
+serveHomepage(HttpRequest& httpRequest, HttpResponse& httpResponse):
+  send the normal homepage
+
+serveNotFound(HttpRequest& httpRequest, HttpResponse& httpResponse):
+  send the error 404 response
+
+serveGoldbachSums(HttpRequest& httpRequest, HttpResponse& httpResponse, int64_t *number):
+  string response
+  // Verify numbers what the user wants.
+  for (iterator < number.size()) do
+    if (number < 5 && number > -5) do
+      response = number[iterator] + " NA."
+    end else do
+      if (number < 0) do
+        response = number[iterator]
+        response += calculateGoldbach + " sums "
+        response += golbach.getStringSums()
+        response += "\n"
+      end else do
+        response = number[iterator]
+        response += calculateGoldbach + " sums.\n"
+      end
+    end
+  end
