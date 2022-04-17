@@ -1,0 +1,235 @@
+@media (max-width: 950px) {
+  #navigation_menu ul {
+    flex-direction: column;
+  }
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: #ECF6FF;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#upper_side {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  height: 8%;
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #CC6D3D;
+}
+
+/* -------------- HEADER ------------------- */
+
+#header {
+  /* Upper side config */
+  order: 0;
+  flex: 0 1 25%;
+  align-self: auto;
+  padding: 0;
+
+  /* Header config */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5em;
+  justify-content: center;
+}
+
+#header h1 {
+  margin-top: 0%;
+  margin-left: 20px;
+  margin-right: 0%;
+  margin-bottom: 0%;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  font-size: 18pt;
+}
+
+#header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------- NAVIGATION MENU ------------------- */
+
+#navigation_menu {
+  /* Upper side config */
+  order: 1;
+  flex: 0 1 40%;
+  align-self: auto;
+
+  /* Navigation menu config */
+  /*border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #E46305;*/
+}
+
+#navMenu_items ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#navMenu_items a {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14pt;
+}
+
+#navMenu_links {
+  order: 2;
+  flex: 0 1 10%;
+  align-self: auto;
+}
+
+#navMenu_links ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------- CONTENT ------------------- */
+
+#content {
+  background-color: #A3B4C8;
+  background-size: 100% 100%;
+  height: 72%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+#content #content_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#content a {
+  color: #B9DFFF;
+  font-family: nunito, sans-serif;
+  background-color: #002544;
+  border: 1px #002544;
+  border-radius: 4cm;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+/* -------------- CURRICULUM CONTENT ------------------- */
+
+#curriculum_content {
+  background-color: #A3B4C8; 
+  background-size: 100% 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.knowledge {
+  border-bottom: 3px solid seashell;
+  color: #002544;
+  padding-bottom: 20px;
+}
+
+#subknowledge_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#knowledge_specification {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#knowledge_specification ul {
+  padding: 0px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13pt;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.knowledge ul {
+  list-style-type: none;
+}
+
+.knowledge h3 {
+  font-family: nunito, cursive;
+  text-decoration: underline;
+  font-size: 20pt;
+  margin-top: 15px;
+  margin-left: 35px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.knowledge h4 {
+  font-family: 'Arial', cursive;
+  font-size: 16pt;
+  margin: 0px;
+}
+
+/* -------------- FOOTER ------------------- */
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #022E51;
+  height: 20%;
+}
+
+#footer h6 {
+  font-family:'Gill Sans', sans-serif;
+  font-size: 12pt;
+  color: white;
+}
+
+#footer ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
