@@ -1,0 +1,13 @@
+{
+  "name": "backend_server-javascript",
+  "version": "1.0.0",
+  "description": "Minimal web server made with Node.js",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node webserver.js"
+  },
+  "author": "Emmanuel D. Solis",
+  "license": "ISC",
+  "type": "module"
+}
