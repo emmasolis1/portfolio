@@ -1,0 +1,4 @@
+{
+ "appService.defaultWebAppToDeploy": "/subscriptions/06002b9d-7d11-4adf-8b68-791e919c9e6c/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/personalWebsiteEmmaSolis",
+ "appService.deploySubpath": "."
+}
