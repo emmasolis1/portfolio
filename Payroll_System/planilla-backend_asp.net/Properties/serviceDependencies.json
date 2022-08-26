@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "DataSource=172.16.202.209;Database=TaBueno;UserId=TaBuenoAdmin;Password=TaBueno;"
+    }
+  }
+}

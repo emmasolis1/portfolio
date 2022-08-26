@@ -1,0 +1,11 @@
+Binary Tree.
+
+131072
+-Random Numbers:
+Insert:25129
+Search:37011
+Delete:56132.7
+-Sorted Numbers:
+Insert:25823.3
+Search:36497.3
+Delete:56591.3

@@ -1,0 +1,9 @@
+Hash Table.
+
+131072
+-Random Numbers:
+Insert:11977
+Search:11892.7
+-Sorted Numbers:
+Insert:11765
+Search:11749.3

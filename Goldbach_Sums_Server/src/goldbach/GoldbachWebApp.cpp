@@ -28,18 +28,22 @@ bool GoldbachWebApp::serveHomepage(HttpRequest& httpRequest
     httpResponse.setHeader("Content-type", "text/html; charset=ascii");
 
     // Build the body of the response
-    std::string title = "Goldbach sums de Bryan y Emma";
+    std::string title = "Goldbach Calculator";
     httpResponse.body() << "<!DOCTYPE html>\n"
                         << "<html lang=\"en\">\n"
+                        << "<head>"
                         << "  <meta charset=\"ascii\"/>\n"
                         << "  <title>" << title << "</title>\n"
                         << "  <style>body {font-family: monospace}</style>\n"
+                        << "</head>"
+                        << "<body>"
                         << "  <h1>" << title << "</h1>\n"
                         << "  <form method=\"get\" action=\"/goldbach\">\n"
                         << "    <label for=\"number\">Number</label>\n"
                         << "    <input type=\"text\" name=\"number\" required/>\n"
                         << "    <button type=\"submit\">Calculate</button>\n"
                         << "  </form>\n"
+                        << "</body>"
                         << "</html>\n";
 
     // Send the response to the client (user agent)
@@ -109,41 +113,45 @@ bool GoldbachWebApp::serveGoldbachSums(HttpRequest &httpRequest, HttpResponse &h
                                            "charset=ascii");
 
     // Build the body of the response
-    std::string title = "Goldbach sums for " + print_numbers;
+    std::string title = "Goldbach Calculator";
     httpResponse.body() << "<!DOCTYPE html>\n"
                         << "<html lang=\"en\">\n"
+                        << "<head>"
                         << "  <meta charset=\"ascii\"/>\n"
                         << "  <title>" << title << "</title>\n"
                         << "  <style>body {font-family: monospace} "
                            ".err {color: red}</style>\n"
+                        << "</head>\n"
+                        << "<body>\n"
                         << "  <h1>" << title << "</h1>\n"
-                        << "  <hr><p><a href=\"/\">Back</a></p>\n"
-                        << "</html>\n";
+                        << "  <h2>" << "Created by Emmanuel Solis" << "</h2>\n"
+                        << "  <hr>";
     for (size_t index = 0; index < superList->getSuperListLength(); index++) {
         if (numbersToCalculate[0][index] < 0 && llabs(numbersToCalculate[0][index])
                                                 > 5) {
             httpResponse.body()
-                    << "  <h2>" << numbersToCalculate[0][index] << "</h2>\n"
-                    << "  <p>" << numbersToCalculate[0][index] << ": " << sublistArray[0][index]->getSumsArray()->size() << " sums: ";
-            printSums(httpResponse, sublistArray[0][index]);
+                    << "  <p><a href=\"/\">Back</a></p>\n"
+                    << "  <h3>" << numbersToCalculate[0][index] << "</h3>\n"
+                    << "  <h4>" << numbersToCalculate[0][index] << ": " << sublistArray[0][index]->getSumsArray()->size() << " sums." << "</h4>";
+                    printSums(httpResponse, sublistArray[0][index]);
         } else if (llabs(numbersToCalculate[0][index]) <= 5) {
             httpResponse.body()
-                    << "  <h2>"<< numbersToCalculate[0][index] <<"</h2>\n"
-                    << "  <p>"<< numbersToCalculate[0][index] << ": NA</p>"
-                    << "</html>\n";
+                    << "  <p><a href=\"/\">Back</a></p>\n"
+                    << "  <h3>"<< numbersToCalculate[0][index] <<"</h3>\n"
+                    << "  <h4>"<< numbersToCalculate[0][index] << ": NA</h4>\n"
+                    << "<hr>";
         } else {
             httpResponse.body()
-                    << "  <h2>" << numbersToCalculate[0][index] << "</h2>\n"
-                    << "  <p>" << numbersToCalculate[0][index] << ": "
-                    << sublistArray[0][index]->getSumsArray()->size()
-                    << " sums</p>"
-                    << "</html>\n";
-
-
+                    << "  <p><a href=\"/\">Back</a></p>\n"
+                    << "  <h3>" << numbersToCalculate[0][index] << "</h3>\n"
+                    << "  <h4>" << numbersToCalculate[0][index] << ": "
+                    << sublistArray[0][index]->getSumsArray()->size() << " sums</h4>\n"
+                    << "<hr>";
         }
+        httpResponse.body()
+                    << "</body>\n";
     }
-    httpResponse.body() << "  <hr><p><a href=\"/\">Back</a></p>\n"
-                        << "</html>\n";
+    httpResponse.body() << "</html>\n";
     // Send the response to the client (user agent)
     delete superList;
     delete numbersToCalculate;
@@ -183,8 +191,9 @@ void GoldbachWebApp:: printSums(HttpResponse& httpResponse,
 
     bool cond = false;
     std::vector<Sum*>* sumsArray = subList->getSumsArray();
-
+    httpResponse.body() << "<ul>";
     for (size_t index = 0; index < sumsArray[0].size(); index++) {
+        httpResponse.body() << "<li>";
         if (cond) {
             break;
         } else if (subList->getGoldbachNumber() % 2 == 0) {
@@ -192,7 +201,7 @@ void GoldbachWebApp:: printSums(HttpResponse& httpResponse,
                                 << sumsArray[0][index]->getSecondNumber();
 
             if (index + 1 != sumsArray[0].size()) {
-                httpResponse.body() << ", ";
+                //httpResponse.body() << ", ";
             } else {
                 cond = true;
             }
@@ -202,10 +211,13 @@ void GoldbachWebApp:: printSums(HttpResponse& httpResponse,
                                 << sumsArray[0][index]->getThirdNumber();
 
             if (index + 1 != sumsArray[0].size()) {
-                httpResponse.body() << ", ";
+                //httpResponse.body() << ", ";
             } else {
                 cond = true;
             }
         }
+        httpResponse.body() << "</li>";
     }
+    httpResponse.body() << "</ul>\n"
+                        << "<hr>";
 }

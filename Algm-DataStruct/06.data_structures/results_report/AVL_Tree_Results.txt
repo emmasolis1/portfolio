@@ -1,0 +1,9 @@
+Binary Tree.
+
+131072
+-Random Numbers:
+Insert:10.6667
+Search:1
+-Sorted Numbers:
+Insert:9
+Search:0.666667

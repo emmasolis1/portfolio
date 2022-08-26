@@ -1,0 +1,21 @@
+Linked List.
+
+131072
+-Random Numbers:
+Insert:25400
+Search:37274.3
+Delete:55821.7
+-Sorted Numbers:
+Insert:26521.3
+Search:35111.7
+Delete:53896.7
+
+262144
+-Random Numbers:
+Insert:110894
+Search:180239
+Delete:256897
+-Sorted Numbers:
+Insert:112169
+Search:167127
+Delete:260300

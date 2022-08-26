@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "secretStore": "LocalSecretsFile",
+      "resourceId": null,
+      "type": "mssql.onprem",
+      "connectionId": "DataSource=172.16.202.209;Database=TaBueno;UserId=TaBuenoAdmin;Password=TaBueno;"
+    }
+  }
+}
